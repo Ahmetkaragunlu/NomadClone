@@ -4,4 +4,27 @@
     <string name="single_country">Single Country</string>
     <string name="regional_plan">Regional Plan</string>
     <string name="popular_destinations">Popular Destinations</string>
+    <string name="americas">Americas</string>
+    <string name="europe">Europe</string>
+    <string name="asia">Asia</string>
+    <string name="united_states">United States</string>
+    <string name="canada">Canada</string>
+    <string name="mexico">Mexico</string>
+    <string name="costa_rica">Costa Rica</string>
+    <string name="honduras">Honduras</string>
+    <string name="guatemela">Guatemela</string>
+    <string name="see_all">See All</string>
+    <string name="united_kingdom">United Kin..</string>
+    <string name="italy">Italy</string>
+    <string name="türkiye">Türkiye</string>
+    <string name="france">France</string>
+    <string name="greece">Greece</string>
+    <string name="faroe_ıslands">Faroe Isla..</string>
+    <string name="china">China</string>
+    <string name="australia">Australia</string>
+    <string name="singapore">Singapore</string>
+    <string name="indonesia">Indonesia</string>
+    <string name="thailand">Thailand</string>
+    <string name="south_korea">South Korea</string>
+
 </resources>

@@ -7,7 +7,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -32,7 +31,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -41,6 +40,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ahmetkaragunlu.nomadclone.contients.AmericasList
+import com.ahmetkaragunlu.nomadclone.contients.AsiaList
+import com.ahmetkaragunlu.nomadclone.contients.EuropeList
+import com.ahmetkaragunlu.nomadclone.popularDestinations.PopularCards
 import com.ahmetkaragunlu.nomadclone.regionalPlanData.regionalPlanList
 import com.ahmetkaragunlu.nomadclone.ui.theme.NomadCloneTheme
 
@@ -83,13 +86,9 @@ fun NomadApp(modifier: Modifier=Modifier) {
     }
     ) {innerPadding->
         var isSelected by remember {
-            mutableStateOf(1)
+            mutableIntStateOf(1)
         }
-      Box(
-          modifier
-              .padding(innerPadding)
-              .fillMaxSize()) {
-          LazyColumn {
+          LazyColumn(contentPadding = innerPadding) {
               item {
                   Pager()
               }
@@ -121,20 +120,45 @@ fun NomadApp(modifier: Modifier=Modifier) {
                           color = Color.White,
                           fontSize =24.sp
                       )
+                      Spacer(modifier.height(18.dp))
+                      PopularCards()
+                      Spacer(modifier.height(18.dp))
+                      Text(text = stringResource(id = R.string.americas),
+                          modifier.padding(start = 8.dp),
+                          color = Color.White,
+                          fontSize = 18.sp
+                      )
+                      Spacer(modifier.height(8.dp))
+                      AmericasList()
+                      Spacer(modifier.height(18.dp))
+                      Text(text = stringResource(id = R.string.europe),
+                          modifier.padding(start = 8.dp),
+                          color = Color.White,
+                          fontSize = 18.sp
+                      )
+                      Spacer(modifier.height(8.dp))
+                      EuropeList()
+                      Spacer(modifier.height(18.dp))
+                      Text(text = stringResource(id = R.string.asia),
+                          modifier.padding(start = 8.dp),
+                          color = Color.White,
+                          fontSize = 18.sp
+                      )
+                      Spacer(modifier.height(8.dp))
+                      AsiaList()
                   }
               }
              if (isSelected==2) {
-                 items(regionalPlanList.imageList) { it->
+                 items(regionalPlanList.imageList) { images->
                      Card(
                          Modifier
                              .padding(start = 24.dp, end = 24.dp, top = 2.dp, bottom = 2.dp)
                              .clickable { }){
-                         Image(painter = painterResource(id = it), contentDescription =null)
+                         Image(painter = painterResource(id = images), contentDescription =null)
                      }
                  }
              }
 
           }
-      }
     }
 }
