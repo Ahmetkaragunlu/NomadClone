@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">NomadClone</string>
     <string name="data_plan">Data Plan</string>
+    <string name="single_country">Single Country</string>
+    <string name="regional_plan">Regional Plan</string>
+    <string name="popular_destinations">Popular Destinations</string>
 </resources>

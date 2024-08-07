@@ -3,6 +3,7 @@ package com.ahmetkaragunlu.nomadclone
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -30,11 +31,11 @@ fun Pager(modifier: Modifier=Modifier) {
     val pagerState= rememberPagerState(pageCount = {3})
 
     HorizontalPager(state = pagerState, contentPadding = PaddingValues(horizontal = 32.dp)) { page->
-            Card {
+            Card (modifier.clickable {  }){
                 when(page){
-                    0-> Image(painter = painterResource(id = R.drawable.image1), contentDescription =null)
-                    1-> Image(painter = painterResource(id = R.drawable.image2), contentDescription =null)
-                    2-> Image(painter = painterResource(id = R.drawable.image3), contentDescription =null)
+                    0-> Image(painter = painterResource(id = R.drawable.card1), contentDescription =null)
+                    1-> Image(painter = painterResource(id = R.drawable.card2), contentDescription =null)
+                    2-> Image(painter = painterResource(id = R.drawable.card3), contentDescription =null)
                 }
             }
     }
@@ -48,7 +49,8 @@ fun Pager(modifier: Modifier=Modifier) {
                         .padding(2.dp)
                         .clip(shape = RoundedCornerShape(12.dp))
                         .background(color)
-                        .size(16.dp,8.dp))
+                        .size(16.dp, 8.dp))
             }
         }
+
 }
