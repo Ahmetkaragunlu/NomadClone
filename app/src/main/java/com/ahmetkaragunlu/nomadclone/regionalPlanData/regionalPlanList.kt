@@ -2,7 +2,7 @@ package com.ahmetkaragunlu.nomadclone.regionalPlanData
 
 import com.ahmetkaragunlu.nomadclone.R
 
-object regionalPlanList {
+object RegionalPlanList {
 
     val imageList= listOf(
         R.drawable.image1,

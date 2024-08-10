@@ -28,17 +28,16 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ahmetkaragunlu.nomadclone.R
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun EuropeList(modifier: Modifier=Modifier) {
-    val pagerState= rememberPagerState(pageCount = {7})
+fun EuropeList(modifier: Modifier = Modifier) {
+    val pagerState = rememberPagerState(pageCount = { 7 })
 
-    val description= listOf(
+    val description = listOf(
         R.string.united_kingdom,
         R.string.italy,
         R.string.türkiye,
@@ -47,7 +46,11 @@ fun EuropeList(modifier: Modifier=Modifier) {
         R.string.faroe_ıslands,
         R.string.see_all
     )
-    HorizontalPager(state = pagerState, contentPadding = PaddingValues(horizontal = 32.dp), pageSize = PageSize.Fixed(80.dp)) { page->
+    HorizontalPager(
+        state = pagerState,
+        contentPadding = PaddingValues(horizontal = 32.dp),
+        pageSize = PageSize.Fixed(80.dp)
+    ) { page ->
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Card(
                 modifier
@@ -57,22 +60,42 @@ fun EuropeList(modifier: Modifier=Modifier) {
                     .border(12.dp, Color.Gray)
                     .size(60.dp)
                     .padding(6.dp)
-            ){
-                when(page) {
-                    0-> Image(painter = painterResource(id = R.drawable.united_kingdom_flag), contentDescription =null )
-                    1-> Image(painter = painterResource(id = R.drawable.italy), contentDescription =null )
-                    2-> Image(painter = painterResource(id = R.drawable.turkey), contentDescription =null )
-                    3-> Image(painter = painterResource(id = R.drawable.france), contentDescription =null )
-                    4-> Image(painter = painterResource(id = R.drawable.greece), contentDescription =null )
-                    5-> Image(painter = painterResource(id = R.drawable.faroe_slands), contentDescription =null )
-                    6-> Icon(imageVector = Icons.Filled.Search, contentDescription = null,
+            ) {
+                when (page) {
+                    0 -> Image(
+                        painter = painterResource(id = R.drawable.united_kingdom_flag),
+                        contentDescription = null
+                    )
+                    1 -> Image(
+                        painter = painterResource(id = R.drawable.italy),
+                        contentDescription = null
+                    )
+                    2 -> Image(
+                        painter = painterResource(id = R.drawable.turkey),
+                        contentDescription = null
+                    )
+                    3 -> Image(
+                        painter = painterResource(id = R.drawable.france),
+                        contentDescription = null
+                    )
+                    4 -> Image(
+                        painter = painterResource(id = R.drawable.greece),
+                        contentDescription = null
+                    )
+                    5 -> Image(
+                        painter = painterResource(id = R.drawable.faroe_slands),
+                        contentDescription = null
+                    )
+                    6 -> Icon(
+                        imageVector = Icons.Filled.Search, contentDescription = null,
                         modifier
                             .size(60.dp)
                             .background(Color.Gray), tint = Color.White)
                 }
             }
             Spacer(modifier.height(12.dp))
-            Text(text = stringResource(id = description[page]),
+            Text(
+                text = stringResource(id = description[page]),
                 color = Color.White,
                 fontSize = 12.sp,
             )

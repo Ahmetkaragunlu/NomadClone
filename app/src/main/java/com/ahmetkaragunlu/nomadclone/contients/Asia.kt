@@ -46,7 +46,8 @@ fun AsiaList(modifier: Modifier=Modifier) {
         R.string.south_korea,
         R.string.see_all,
     )
-    HorizontalPager(state = pagerState, contentPadding = PaddingValues(horizontal = 32.dp), pageSize = PageSize.Fixed(80.dp)) { page->
+    HorizontalPager(state = pagerState, contentPadding = PaddingValues(horizontal = 32.dp),
+        pageSize = PageSize.Fixed(80.dp)) { page->
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Card(
                 modifier

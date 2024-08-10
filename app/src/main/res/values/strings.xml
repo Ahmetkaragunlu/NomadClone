@@ -4,6 +4,7 @@
     <string name="single_country">Single Country</string>
     <string name="regional_plan">Regional Plan</string>
     <string name="popular_destinations">Popular Destinations</string>
+    <string name="popular_destination">Popular Destination</string>
     <string name="americas">Americas</string>
     <string name="europe">Europe</string>
     <string name="asia">Asia</string>
@@ -26,5 +27,18 @@
     <string name="indonesia">Indonesia</string>
     <string name="thailand">Thailand</string>
     <string name="south_korea">South Korea</string>
+    <string name="sms_plan">SMS Plan</string>
+    <string name="manage">Manage</string>
+    <string name="current">Current</string>
+    <string name="expired">Expired</string>
+    <string name="explore">Explore</string>
+    <string name="popular_attractions">Popular Attractions</string>
+    <string name="no_plan_yet">No plan yet</string>
+    <string name="popular_tours">Popular Tours</string>
+    <string name="popular_destination_guides">Popular Destination Guides</string>
+    <string name="explore_text2">Explore your destination on one of these tours</string>
+    <string name="manage_text">You can manage your purchased plans here</string>
+    <string name="explore_text1">Compare prices across different platforms to find the best deal.</string>
+    <string name="manage_text2">Your expired plans will be stored here</string>
 
 </resources>

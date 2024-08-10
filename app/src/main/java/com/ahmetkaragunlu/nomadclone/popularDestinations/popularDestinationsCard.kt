@@ -20,25 +20,39 @@ import com.ahmetkaragunlu.nomadclone.R
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun PopularCards(modifier: Modifier=Modifier) {
+fun PopularCards(modifier: Modifier = Modifier) {
 
-    val pagerState= rememberPagerState(pageCount = {3})
+    val pagerState = rememberPagerState(pageCount = { 3 })
 
-    HorizontalPager(state = pagerState, contentPadding = PaddingValues(horizontal = 32.dp)) { page->
-        Card (modifier.clickable {  }.fillMaxWidth().padding(start = 8.dp).height(200.dp)){
-
-            when(page) {
-             0-> Image(painter = painterResource(id = R.drawable.united_states), contentDescription = null,
-                 modifier = Modifier.fillMaxSize(),
-                 contentScale = ContentScale.FillBounds)
-             1-> Image(painter = painterResource(id = R.drawable.china), contentDescription = null,
-                 modifier = Modifier.fillMaxSize(),
-                 contentScale = ContentScale.FillBounds)
-             2-> Image(painter = painterResource(id = R.drawable.united_kingdom), contentDescription = null,
-                 modifier = Modifier.fillMaxSize(),
-                 contentScale = ContentScale.FillBounds)
+    HorizontalPager(
+        state = pagerState,
+        contentPadding = PaddingValues(horizontal = 32.dp)
+    ) { page ->
+        Card(
+            modifier
+                .clickable { }
+                .fillMaxWidth()
+                .padding(start = 8.dp)
+                .height(200.dp)) {
+            when (page) {
+                0 -> Image(
+                    painter = painterResource(id = R.drawable.united_states),
+                    contentDescription = null,
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.FillBounds
+                )
+                1 -> Image(
+                    painter = painterResource(id = R.drawable.china), contentDescription = null,
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.FillBounds
+                )
+                2 -> Image(
+                    painter = painterResource(id = R.drawable.united_kingdom),
+                    contentDescription = null,
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.FillBounds
+                )
             }
         }
     }
-
 }
