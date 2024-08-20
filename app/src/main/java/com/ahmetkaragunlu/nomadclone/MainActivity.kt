@@ -16,6 +16,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemColors
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -85,12 +87,17 @@ fun NomadApp(modifier: Modifier = Modifier) {
                         icon = { Icon(imageVector = item.icon, contentDescription = null) },
                         label = {
                             Text(
-                                text = item.label,
-                                color = if (currentScreen == item.screens) Color.White else Color.Gray
-                            )
+                                text = item.label)
                         },
                         selected = currentScreen == item.screens,
-                        onClick = { currentScreen = item.screens }
+                        onClick = { currentScreen = item.screens },
+                        colors = NavigationBarItemDefaults.colors(
+                            selectedTextColor = Color.White,
+                            unselectedTextColor = Color.Gray,
+                            selectedIconColor = Color.White,
+                            unselectedIconColor = Color.Gray,
+                            indicatorColor = Color(0xFF121529)
+                            )
                     )
                 }
             }
