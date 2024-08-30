@@ -3,7 +3,6 @@ package com.ahmetkaragunlu.nomadclone.navigationBottomBar.screensUI
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -38,11 +37,11 @@ import com.ahmetkaragunlu.nomadclone.popularDestinations.PopularCards
 import com.ahmetkaragunlu.nomadclone.regionalPlanData.RegionalPlanList
 
 @Composable
-fun DataScreen(innerPadding: PaddingValues, modifier: Modifier = Modifier) {
+fun DataScreen( modifier: Modifier = Modifier) {
     var isSelected by remember {
         mutableIntStateOf(1)
     }
-    LazyColumn(contentPadding = innerPadding) {
+    LazyColumn{
         item {
             Pager()
             Spacer(modifier.height(24.dp))

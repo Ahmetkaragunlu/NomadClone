@@ -3,7 +3,6 @@ package com.ahmetkaragunlu.nomadclone.navigationBottomBar.screensUI
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -28,12 +27,11 @@ import com.ahmetkaragunlu.nomadclone.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SmsScreen(modifier: Modifier = Modifier, paddingValues: PaddingValues) {
+fun SmsScreen(modifier: Modifier = Modifier) {
 
     Column(
         modifier
-            .fillMaxSize()
-            .padding(paddingValues = paddingValues),
+            .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         TopAppBar(colors = topAppBarColors(

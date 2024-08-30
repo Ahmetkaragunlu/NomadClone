@@ -36,12 +36,12 @@ import com.ahmetkaragunlu.nomadclone.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ExploreScreen(innerPadding: PaddingValues, modifier: Modifier = Modifier) {
+fun ExploreScreen(modifier: Modifier = Modifier) {
 
     Column(
         modifier
             .fillMaxSize()
-            .padding(innerPadding)
+
     ) {
         TopAppBar(colors = TopAppBarDefaults.topAppBarColors(
             containerColor = MaterialTheme.colorScheme.background,
