@@ -26,12 +26,11 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.ahmetkaragunlu.nomadclone.R
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -45,7 +44,7 @@ fun ExploreScreen(modifier: Modifier = Modifier) {
     ) {
         TopAppBar(colors = TopAppBarDefaults.topAppBarColors(
             containerColor = MaterialTheme.colorScheme.background,
-            titleContentColor = Color.White
+            titleContentColor = MaterialTheme.colorScheme.onBackground
         ),
             title = {
                 Row {
@@ -53,58 +52,56 @@ fun ExploreScreen(modifier: Modifier = Modifier) {
                     Spacer(modifier.weight(1f))
                     Icon(imageVector = Icons.Default.Search, contentDescription = null,
                         modifier
-                            .padding(end = 8.dp)
+                            .padding(end = dimensionResource(id = R.dimen.padding_medium))
                             .clickable { }
                     )
                 }
             })
-        LazyColumn(modifier.padding(top = 8.dp)) {
+        LazyColumn(modifier.padding(top = dimensionResource(id = R.dimen.padding_medium))) {
             item {
                 Text(
                     text = stringResource(id = R.string.popular_destination),
-                    modifier.padding(start = 8.dp),
-                    color = Color.White,
-                    fontSize = 24.sp
+                    modifier.padding(start = dimensionResource(id = R.dimen.padding_medium)),
+                    style =MaterialTheme.typography.titleLarge
+
                 )
-                Spacer(modifier.height(12.dp))
+                Spacer(modifier.height(dimensionResource(id = R.dimen.spacer_padding)))
                 PopularDestination()
 
                 Spacer(modifier.height(18.dp))
                 Text(
                     text = stringResource(id = R.string.popular_attractions),
-                    modifier.padding(8.dp),
-                    color = Color.White,
-                    fontSize = 24.sp
+                    modifier.padding(dimensionResource(id = R.dimen.padding_medium)),
+                    style =MaterialTheme.typography.titleLarge
                 )
                 Text(
                     text = stringResource(id = R.string.explore_text1),
-                    modifier.padding(8.dp),
-                    color = Color.Gray
+                    modifier.padding(dimensionResource(id = R.dimen.padding_medium)),
+                    color = MaterialTheme.colorScheme.onSecondary
                 )
-                Spacer(modifier.height(8.dp))
+                Spacer(modifier.height(dimensionResource(id = R.dimen.padding_medium)))
                 PopularAttractions()
-                Spacer(modifier.height(12.dp))
+                Spacer(modifier.height(dimensionResource(id = R.dimen.spacer_padding)))
                 Text(
                     text = stringResource(id = R.string.popular_tours),
-                    modifier.padding(start = 8.dp),
-                    color = Color.White,
-                    fontSize = 24.sp
+                    modifier.padding(start = dimensionResource(id = R.dimen.padding_medium)),
+                    style =MaterialTheme.typography.titleLarge
                 )
+                Spacer(modifier = modifier.height(dimensionResource(id = R.dimen.padding_small)))
                 Text(
                     text = stringResource(id = R.string.explore_text2),
-                    modifier.padding(start = 8.dp),
-                    color = Color.Gray
+                    modifier.padding(start = dimensionResource(id = R.dimen.padding_medium)),
+                    color = MaterialTheme.colorScheme.onSecondary
                 )
                 Spacer(modifier.height(18.dp))
                 PopularTours()
                 Spacer(modifier.height(18.dp))
                 Text(
                     text = stringResource(id = R.string.popular_destination_guides),
-                    modifier.padding(start = 8.dp),
-                    color = Color.White,
-                    fontSize = 24.sp
+                    modifier.padding(start = dimensionResource(id = R.dimen.padding_medium)),
+                    style =MaterialTheme.typography.titleLarge
                 )
-                Spacer(modifier.height(12.dp))
+                Spacer(modifier.height(dimensionResource(id = R.dimen.spacer_padding)))
                 PopularDestinationGuides()
             }
         }

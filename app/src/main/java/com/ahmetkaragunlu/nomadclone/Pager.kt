@@ -16,13 +16,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 
@@ -34,10 +35,13 @@ fun Pager(modifier: Modifier = Modifier) {
 
     HorizontalPager(
         state = pagerState,
-        contentPadding = PaddingValues(horizontal = 32.dp),
-        pageSpacing = 16.dp
+        contentPadding = PaddingValues(dimensionResource(id = R.dimen.pager_padding)),
+        pageSpacing = dimensionResource(id = R.dimen.padding_large)
     ) { page ->
-        Card(modifier.clickable { }.height(200.dp)) {
+        Card(
+            modifier
+                .clickable { }
+                .height(200.dp)) {
             when (page) {
                 0 -> Image(
                     painter = painterResource(id = R.drawable.card1),
@@ -60,16 +64,20 @@ fun Pager(modifier: Modifier = Modifier) {
             }
         }
     }
-    Spacer(modifier.height(12.dp))
+    Spacer(modifier.height(dimensionResource(id = R.dimen.spacer_padding)))
     Row(modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
         repeat(pagerState.pageCount) { iteration ->
             val color = if (pagerState.currentPage == iteration) Color.Gray else Color.DarkGray
             Box(
                 modifier
                     .padding(2.dp)
-                    .clip(shape = RoundedCornerShape(12.dp))
+                    .clip(MaterialTheme.shapes.large)
                     .background(color)
-                    .size(16.dp, 8.dp))
+                    .size(
+                        width = dimensionResource(id = R.dimen.padding_large),
+                        height = dimensionResource(id = R.dimen.padding_medium)
+                    )
+            )
         }
     }
 }

@@ -25,6 +25,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -44,7 +45,7 @@ fun ManageScreen(modifier: Modifier = Modifier) {
 
         TopAppBar(colors = TopAppBarDefaults.topAppBarColors(
             containerColor = MaterialTheme.colorScheme.background,
-            titleContentColor = Color.White
+            titleContentColor = MaterialTheme.colorScheme.onBackground
         ), title = { Text(text = stringResource(id = R.string.manage)) })
         Row(modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
             Button(
@@ -73,30 +74,26 @@ fun ManageScreen(modifier: Modifier = Modifier) {
                         painter = painterResource(id = R.drawable.manage_image),
                         contentDescription = null
                     )
-                    Spacer(modifier.height(16.dp))
+                    Spacer(modifier.height(dimensionResource(id = R.dimen.padding_large)))
                     Text(
                         text = stringResource(id = R.string.no_plan_yet),
-                        color = Color.White
                     )
-                    Spacer(modifier.height(8.dp))
+                    Spacer(modifier.height(dimensionResource(id = R.dimen.padding_medium)))
                     Text(
                         text = stringResource(id = R.string.manage_text),
-                        color = Color.White
                     )
                 } else {
                     Image(
                         painter = painterResource(id = R.drawable.manage_image),
                         contentDescription = null
                     )
-                    Spacer(modifier.height(16.dp))
+                    Spacer(modifier.height(dimensionResource(id = R.dimen.padding_large)))
                     Text(
                         text = stringResource(id = R.string.no_plan_yet),
-                        color = Color.White
                     )
-                    Spacer(modifier.height(8.dp))
+                    Spacer(modifier.height(dimensionResource(id = R.dimen.padding_medium)))
                     Text(
                         text = stringResource(id = R.string.manage_text2),
-                        color = Color.White
                     )
                 }
             }

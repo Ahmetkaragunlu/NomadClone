@@ -2,8 +2,10 @@ package com.ahmetkaragunlu.nomadclone.ui.theme
 
 import android.app.Activity
 import android.os.Build
+import android.os.Build.VERSION_CODES.S
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Shapes
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
@@ -25,19 +27,22 @@ private val DarkColorScheme = darkColorScheme(
 private val LightColorScheme = lightColorScheme(
     primary = Purple40,
     secondary = PurpleGrey40,
-    tertiary = Pink40,
+    tertiary = Color.Gray,
    background = Color(0xFF121529),
+    onBackground = Color(0xFFFFFFFF),
+    onSecondary = Color.LightGray,
+    onSurface = Color.White
+)
+
 
     /* Other default colors to override
 
-    surface = Color(0xFFFFFBFE),
     onPrimary = Color.White,
-    onSecondary = Color.White,
+
     onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
-)
+
+
+*/
 
 @Composable
 fun NomadCloneTheme(
@@ -71,6 +76,8 @@ fun NomadCloneTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
-        content = content
+        content = content,
+        shapes= shapes
+
     )
 }

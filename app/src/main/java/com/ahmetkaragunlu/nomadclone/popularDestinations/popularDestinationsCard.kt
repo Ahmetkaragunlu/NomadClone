@@ -14,6 +14,7 @@ import androidx.compose.material3.Card
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.ahmetkaragunlu.nomadclone.R
@@ -26,13 +27,13 @@ fun PopularCards(modifier: Modifier = Modifier) {
 
     HorizontalPager(
         state = pagerState,
-        contentPadding = PaddingValues(horizontal = 32.dp)
+        contentPadding = PaddingValues(dimensionResource(id = R.dimen.pager_padding))
     ) { page ->
         Card(
             modifier
                 .clickable { }
                 .fillMaxWidth()
-                .padding(start = 8.dp)
+                .padding(start = dimensionResource(id = R.dimen.padding_medium))
                 .height(200.dp)) {
             when (page) {
                 0 -> Image(

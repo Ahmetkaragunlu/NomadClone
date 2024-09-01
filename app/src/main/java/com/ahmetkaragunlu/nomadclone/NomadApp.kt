@@ -24,9 +24,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import com.ahmetkaragunlu.nomadclone.navigationBottomBar.Screens
 import com.ahmetkaragunlu.nomadclone.navigationBottomBar.navItems
 import com.ahmetkaragunlu.nomadclone.navigationBottomBar.screensUI.DataScreen
@@ -43,7 +42,7 @@ fun NomadApp(modifier: Modifier = Modifier) {
         if (currentScreen == Screens.DATA) {
             TopAppBar(colors = TopAppBarDefaults.topAppBarColors(
                 containerColor = MaterialTheme.colorScheme.background,
-                titleContentColor = Color.White
+                titleContentColor =MaterialTheme.colorScheme.onBackground
             ),
                 title = {
                     Row {
@@ -51,14 +50,14 @@ fun NomadApp(modifier: Modifier = Modifier) {
                         Spacer(modifier.weight(1f))
                         Icon(imageVector = Icons.Filled.Search, contentDescription = null,
                             modifier
-                                .padding(end = 8.dp)
+                                .padding(end = dimensionResource(id = R.dimen.padding_medium))
                                 .clickable { })
                     }
                 })
         }
     },
         bottomBar = {
-            NavigationBar(containerColor = Color(0xFF121529)) {
+            NavigationBar(containerColor =MaterialTheme.colorScheme.background) {
                 navItems.forEach { item ->
                     NavigationBarItem(
                         icon = { Icon(imageVector = item.icon, contentDescription = null) },
@@ -70,18 +69,18 @@ fun NomadApp(modifier: Modifier = Modifier) {
                         selected = currentScreen == item.screens,
                         onClick = { currentScreen = item.screens },
                         colors = NavigationBarItemDefaults.colors(
-                            selectedTextColor = Color.White,
-                            unselectedTextColor = Color.Gray,
-                            selectedIconColor = Color.White,
-                            unselectedIconColor = Color.Gray,
-                            indicatorColor = Color(0xFF121529)
+                            selectedIconColor = MaterialTheme.colorScheme.onSurface,
+                            unselectedIconColor = MaterialTheme.colorScheme.tertiary,
+                            indicatorColor = MaterialTheme.colorScheme.background
                         )
                     )
                 }
             }
         }
     ) { innerPadding ->
-        Column (modifier= Modifier.fillMaxSize().padding(innerPadding)){
+        Column (modifier= Modifier
+            .fillMaxSize()
+            .padding(innerPadding)){
 
             if (currentScreen == Screens.DATA) {
                 DataScreen()

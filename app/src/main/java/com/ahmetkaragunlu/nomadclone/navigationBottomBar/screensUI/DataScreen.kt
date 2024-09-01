@@ -15,6 +15,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -24,10 +25,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.ahmetkaragunlu.nomadclone.Pager
 import com.ahmetkaragunlu.nomadclone.R
 import com.ahmetkaragunlu.nomadclone.contients.AmericasList
@@ -59,43 +60,39 @@ fun DataScreen( modifier: Modifier = Modifier) {
                     Text(text = stringResource(id = R.string.regional_plan))
                 }
             }
-            Spacer(modifier.height(12.dp))
+            Spacer(modifier.height(dimensionResource(id = R.dimen.spacer_padding)))
             if (isSelected == 1) {
 
                 Text(
                     text = stringResource(id = R.string.popular_destinations),
-                    modifier.padding(8.dp),
-                    color = Color.White,
-                    fontSize = 24.sp
+                    modifier.padding(dimensionResource(id = R.dimen.padding_medium)),
+                   style = MaterialTheme.typography.titleLarge
                 )
                 Spacer(modifier.height(18.dp))
                 PopularCards()
                 Spacer(modifier.height(18.dp))
                 Text(
                     text = stringResource(id = R.string.americas),
-                    modifier.padding(start = 8.dp),
-                    color = Color.White,
-                    fontSize = 18.sp
+                    modifier.padding(start = dimensionResource(id = R.dimen.padding_medium)),
+                    style = MaterialTheme.typography.bodyLarge
                 )
-                Spacer(modifier.height(8.dp))
+                Spacer(modifier.height(dimensionResource(id = R.dimen.padding_medium)))
                 AmericasList()
                 Spacer(modifier.height(18.dp))
                 Text(
                     text = stringResource(id = R.string.europe),
-                    modifier.padding(start = 8.dp),
-                    color = Color.White,
-                    fontSize = 18.sp
+                    modifier.padding(start = dimensionResource(id = R.dimen.padding_medium)),
+                   style = MaterialTheme.typography.bodyLarge
                 )
-                Spacer(modifier.height(8.dp))
+                Spacer(modifier.height(dimensionResource(id = R.dimen.padding_medium)))
                 EuropeList()
                 Spacer(modifier.height(18.dp))
                 Text(
                     text = stringResource(id = R.string.asia),
                     modifier.padding(start = 8.dp),
-                    color = Color.White,
-                    fontSize = 18.sp
+                    style = MaterialTheme.typography.bodyLarge
                 )
-                Spacer(modifier.height(8.dp))
+                Spacer(modifier.height(dimensionResource(id = R.dimen.padding_medium)))
                 AsiaList()
             }
         }
@@ -103,7 +100,7 @@ fun DataScreen( modifier: Modifier = Modifier) {
             items(RegionalPlanList.imageList) { images ->
                 Card(
                     Modifier
-                        .padding(16.dp)
+                        .padding(dimensionResource(id = R.dimen.padding_large))
                         .height(200.dp)
                         .fillMaxWidth()
                         .clickable { }) {

@@ -19,10 +19,9 @@ import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import com.ahmetkaragunlu.nomadclone.R
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -36,7 +35,7 @@ fun SmsScreen(modifier: Modifier = Modifier) {
     ) {
         TopAppBar(colors = topAppBarColors(
             containerColor = MaterialTheme.colorScheme.background,
-            titleContentColor = Color.White
+            titleContentColor = MaterialTheme.colorScheme.onBackground
         ),
             title = {
                 Row {
@@ -44,7 +43,7 @@ fun SmsScreen(modifier: Modifier = Modifier) {
                     Spacer(modifier.weight(1f))
                     Icon(imageVector = Icons.Default.Sms, contentDescription = null,
                         modifier
-                            .padding(end = 16.dp)
+                            .padding(end = dimensionResource(id = R.dimen.padding_large))
                             .clickable { })
                 }
             })
